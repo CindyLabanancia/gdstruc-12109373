@@ -1,0 +1,219 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (mmap) failed to map 190840832 bytes for G1 virtual space
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   The process is running with CompressedOops enabled, and the Java Heap may be blocking the growth of the native heap
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+#   JVM is running with Zero Based Compressed Oops mode in which the Java heap is
+#     placed in the first 32GB address space. The Java Heap base address is the
+#     maximum limit for the native heap growth. Please use -XX:HeapBaseMinAddress
+#     to set the Java Heap base and to place the Java Heap above 32GB virtual address.
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (os_windows.cpp:3530), pid=17908, tid=19096
+#
+# JRE version:  (18.0.2.1+1) (build )
+# Java VM: OpenJDK 64-Bit Server VM (18.0.2.1+1-1, mixed mode, sharing, tiered, compressed oops, compressed class ptrs, g1 gc, windows-amd64)
+# No core dump will be written. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: -javaagent:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2022.2.1\lib\idea_rt.jar=57629:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2022.2.1\bin -Dfile.encoding=UTF-8 -Dsun.stdout.encoding=UTF-8 -Dsun.stderr.encoding=UTF-8 Main
+
+Host: Intel(R) Core(TM) i5-7200U CPU @ 2.50GHz, 4 cores, 11G,  Windows 10 , 64 bit Build 19041 (10.0.19041.2251)
+Time: Sat Nov 26 15:42:52 2022 Malay Peninsula Standard Time elapsed time: 0.029362 seconds (0d 0h 0m 0s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x000002075038c130):  JavaThread "Unknown thread" [_thread_in_vm, id=19096, stack(0x000000d529300000,0x000000d529400000)]
+
+Stack: [0x000000d529300000,0x000000d529400000]
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x6993aa]
+V  [jvm.dll+0x7f46dd]
+V  [jvm.dll+0x7f5fee]
+V  [jvm.dll+0x7f66a3]
+V  [jvm.dll+0x25cf1f]
+V  [jvm.dll+0x6962f9]
+V  [jvm.dll+0x68ae2a]
+V  [jvm.dll+0x32255b]
+V  [jvm.dll+0x329f36]
+V  [jvm.dll+0x37eade]
+V  [jvm.dll+0x37ed0f]
+V  [jvm.dll+0x2fa2da]
+V  [jvm.dll+0x2fb33d]
+V  [jvm.dll+0x7c3310]
+V  [jvm.dll+0x38be61]
+V  [jvm.dll+0x7a2023]
+V  [jvm.dll+0x40dc3f]
+V  [jvm.dll+0x40f611]
+C  [jli.dll+0x526b]
+C  [ucrtbase.dll+0x21bb2]
+C  [KERNEL32.DLL+0x174b4]
+C  [ntdll.dll+0x526a1]
+
+
+---------------  P R O C E S S  ---------------
+
+Threads class SMR info:
+_java_thread_list=0x00007fffe84ee550, length=0, elements={
+}
+
+Java Threads: ( => current thread )
+
+Other Threads:
+  0x00000207503e5b40 WorkerThread "GC Thread#0" [stack: 0x000000d529400000,0x000000d529500000] [id=16412]
+  0x00000207503f1eb0 ConcurrentGCThread "G1 Main Marker" [stack: 0x000000d529500000,0x000000d529600000] [id=12696]
+  0x00000207503f4050 WorkerThread "G1 Conc#0" [stack: 0x000000d529600000,0x000000d529700000] [id=748]
+
+[error occurred during error reporting (printing all threads), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007fffe7d1a877]
+
+VM state: not at safepoint (not fully initialized)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x0000020750388fd0] Heap_lock - owner thread: 0x000002075038c130
+
+Heap address: 0x000000074bc00000, size: 2884 MB, Compressed Oops mode: Zero based, Oop shift amount: 3
+
+CDS archive(s) mapped at: [0x0000000000000000-0x0000000000000000-0x0000000000000000), size 0, SharedBaseAddress: 0x0000000800000000, ArchiveRelocationMode: 0.
+Narrow klass base: 0x0000000000000000, Narrow klass shift: 0, Narrow klass range: 0x0
+
+GC Precious Log:
+ CardTable entry size: 512
+ Card Set container configuration: InlinePtr #cards 4 size 8 Array Of Cards #cards 16 size 48 Howl #buckets 8 coarsen threshold 3686 Howl Bitmap #cards 512 size 80 coarsen threshold 460 Card regions per heap region 1 cards per card region 4096
+
+Heap:
+ garbage-first heap   total 0K, used 0K [0x000000074bc00000, 0x0000000800000000)
+  region size 2048K, 0 young (0K), 0 survivors (0K)
+
+[error occurred during error reporting (printing heap information), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007fffe8101839]
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (0 events):
+No events
+
+Classes loaded (0 events):
+No events
+
+Classes unloaded (0 events):
+No events
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (0 events):
+No events
+
+VM Operations (0 events):
+No events
+
+Events (1 events):
+Event: 0.020 Loaded shared library C:\Users\cindy\.jdks\openjdk-18.0.2.1\bin\java.dll
+
+
+Dynamic libraries:
+0x00007ff7fe510000 - 0x00007ff7fe51e000 	C:\Users\cindy\.jdks\openjdk-18.0.2.1\bin\java.exe
+0x00007ff881790000 - 0x00007ff881988000 	C:\WINDOWS\SYSTEM32\ntdll.dll
+0x00007ff87f980000 - 0x00007ff87fa3f000 	C:\WINDOWS\System32\KERNEL32.DLL
+0x00007ff87ef90000 - 0x00007ff87f262000 	C:\WINDOWS\System32\KERNELBASE.dll
+0x00007ff87f6d0000 - 0x00007ff87f7d0000 	C:\WINDOWS\System32\ucrtbase.dll
+0x00007ff852ee0000 - 0x00007ff852efa000 	C:\Users\cindy\.jdks\openjdk-18.0.2.1\bin\VCRUNTIME140.dll
+0x00007ff857870000 - 0x00007ff857887000 	C:\Users\cindy\.jdks\openjdk-18.0.2.1\bin\jli.dll
+0x00007ff880460000 - 0x00007ff880601000 	C:\WINDOWS\System32\USER32.dll
+0x00007ff87f6a0000 - 0x00007ff87f6c2000 	C:\WINDOWS\System32\win32u.dll
+0x00007ff881650000 - 0x00007ff88167b000 	C:\WINDOWS\System32\GDI32.dll
+0x00007ff87ee80000 - 0x00007ff87ef8f000 	C:\WINDOWS\System32\gdi32full.dll
+0x00007ff87f4a0000 - 0x00007ff87f53d000 	C:\WINDOWS\System32\msvcp_win.dll
+0x00007ff87e250000 - 0x00007ff87e4ea000 	C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.19041.1110_none_60b5254171f9507e\COMCTL32.dll
+0x00007ff880ad0000 - 0x00007ff880b6e000 	C:\WINDOWS\System32\msvcrt.dll
+0x00007ff87fa40000 - 0x00007ff87fa72000 	C:\WINDOWS\System32\IMM32.DLL
+0x00007ff87a7e0000 - 0x00007ff87a7ec000 	C:\Users\cindy\.jdks\openjdk-18.0.2.1\bin\vcruntime140_1.dll
+0x00007ff81f410000 - 0x00007ff81f49d000 	C:\Users\cindy\.jdks\openjdk-18.0.2.1\bin\msvcp140.dll
+0x00007fffe7a10000 - 0x00007fffe8621000 	C:\Users\cindy\.jdks\openjdk-18.0.2.1\bin\server\jvm.dll
+0x00007ff881440000 - 0x00007ff8814ee000 	C:\WINDOWS\System32\ADVAPI32.dll
+0x00007ff880610000 - 0x00007ff8806ac000 	C:\WINDOWS\System32\sechost.dll
+0x00007ff87f7f0000 - 0x00007ff87f915000 	C:\WINDOWS\System32\RPCRT4.dll
+0x00007ff881740000 - 0x00007ff881748000 	C:\WINDOWS\System32\PSAPI.DLL
+0x00007ff87a7c0000 - 0x00007ff87a7c9000 	C:\WINDOWS\SYSTEM32\WSOCK32.dll
+0x00007ff87fc30000 - 0x00007ff87fc9b000 	C:\WINDOWS\System32\WS2_32.dll
+0x00007ff874a00000 - 0x00007ff874a27000 	C:\WINDOWS\SYSTEM32\WINMM.dll
+0x00007ff8711f0000 - 0x00007ff8711fa000 	C:\WINDOWS\SYSTEM32\VERSION.dll
+0x00007ff87c6d0000 - 0x00007ff87c6e2000 	C:\WINDOWS\SYSTEM32\kernel.appcore.dll
+0x00007ff857990000 - 0x00007ff85799a000 	C:\Users\cindy\.jdks\openjdk-18.0.2.1\bin\jimage.dll
+0x00007ff87e8b0000 - 0x00007ff87ea94000 	C:\WINDOWS\SYSTEM32\DBGHELP.DLL
+0x00007ff87e650000 - 0x00007ff87e685000 	C:\WINDOWS\SYSTEM32\dbgcore.DLL
+0x00007ff87f2e0000 - 0x00007ff87f362000 	C:\WINDOWS\System32\bcryptPrimitives.dll
+0x00007ff857820000 - 0x00007ff85782e000 	C:\Users\cindy\.jdks\openjdk-18.0.2.1\bin\instrument.dll
+0x00007ff852eb0000 - 0x00007ff852ed5000 	C:\Users\cindy\.jdks\openjdk-18.0.2.1\bin\java.dll
+
+dbghelp: loaded successfully - version: 4.0.5 - missing functions: none
+symbol engine: initialized successfully - sym options: 0x614 - pdb path: .;C:\Users\cindy\.jdks\openjdk-18.0.2.1\bin;C:\WINDOWS\SYSTEM32;C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.19041.1110_none_60b5254171f9507e;C:\Users\cindy\.jdks\openjdk-18.0.2.1\bin\server
+
+VM Arguments:
+jvm_args: -javaagent:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2022.2.1\lib\idea_rt.jar=57629:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2022.2.1\bin -Dfile.encoding=UTF-8 -Dsun.stdout.encoding=UTF-8 -Dsun.stderr.encoding=UTF-8 
+java_command: Main
+java_class_path (initial): D:\Users\cindy\Downloads\QueueRemake\out\production\QueueRemake
+Launcher Type: SUN_STANDARD
+
+[Global flags]
+     intx CICompilerCount                          = 3                                         {product} {ergonomic}
+     uint ConcGCThreads                            = 1                                         {product} {ergonomic}
+     uint G1ConcRefinementThreads                  = 4                                         {product} {ergonomic}
+   size_t G1HeapRegionSize                         = 2097152                                   {product} {ergonomic}
+    uintx GCDrainStackTargetSize                   = 64                                        {product} {ergonomic}
+   size_t InitialHeapSize                          = 190840832                                 {product} {ergonomic}
+   size_t MarkStackSize                            = 4194304                                   {product} {ergonomic}
+   size_t MaxHeapSize                              = 3024093184                                {product} {ergonomic}
+   size_t MinHeapDeltaBytes                        = 2097152                                   {product} {ergonomic}
+   size_t MinHeapSize                              = 8388608                                   {product} {ergonomic}
+    uintx NonNMethodCodeHeapSize                   = 5832780                                {pd product} {ergonomic}
+    uintx NonProfiledCodeHeapSize                  = 122912730                              {pd product} {ergonomic}
+    uintx ProfiledCodeHeapSize                     = 122912730                              {pd product} {ergonomic}
+    uintx ReservedCodeCacheSize                    = 251658240                              {pd product} {ergonomic}
+     bool SegmentedCodeCache                       = true                                      {product} {ergonomic}
+   size_t SoftMaxHeapSize                          = 3024093184                             {manageable} {ergonomic}
+     bool UseCompressedClassPointers               = true                           {product lp64_product} {ergonomic}
+     bool UseCompressedOops                        = true                           {product lp64_product} {ergonomic}
+     bool UseG1GC                                  = true                                      {product} {ergonomic}
+     bool UseLargePagesIndividualAllocation        = false                                  {pd product} {ergonomic}
+
+Logging:
+Log output configuration:
+ #0: stdout all=warning uptime,level,tags foldmultilines=false
+ #1: stderr all=off uptime,level,tags foldmultilines=false
+
+Environment Variables:
+PATH=C:\WINDOWS\system32;C:\WINDOWS;C:\Users\cindy\SDLtemplate;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Users\cindy\AppData\Local\Microsoft\WindowsApps
+USERNAME=cindy
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 142 Stepping 9, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS:
+ Windows 10 , 64 bit Build 19041 (10.0.19041.2251)
+OS uptime: 0 days 18:50 hours
+
+CPU: total 4 (initial active 4) (2 cores per cpu, 2 threads per core) family 6 model 142 stepping 9 microcode 0xb4, cx8, cmov, fxsr, ht, mmx, 3dnowpref, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, lzcnt, tsc, tscinvbit, avx, avx2, aes, erms, clmul, bmi1, bmi2, adx, fma, vzeroupper, clflush, clflushopt
+
+Memory: 4k page, system-wide physical 11533M (1362M free)
+TotalPageFile size 19406M (AvailPageFile size 115M)
+current process WorkingSet (physical memory assigned to process): 10M, peak: 10M
+current process commit charge ("private bytes"): 51M, peak: 233M
+
+vm_info: OpenJDK 64-Bit Server VM (18.0.2.1+1-1) for windows-amd64 JRE (18.0.2.1+1-1), built on Aug 16 2022 01:44:29 by "mach5one" with MS VC++ 16.8 / 16.9 (VS2019)
+
+END.
